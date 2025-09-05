@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Magnetic Lab</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<h1>لوحة متابعة الحالات - Magnetic Lab</h1>
+
+<!-- نموذج إضافة حالة -->
+<div id="add-case-form">
+  <input type="text" id="patientName" placeholder="اسم المريض">
+  <input type="text" id="doctor" placeholder="اسم الطبيب">
+  <input type="text" id="toothColor" placeholder="لون الأسنان">
+  <select id="status">
+    <option value="قيد التنفيذ">قيد التنفيذ</option>
+    <option value="مكتملة">مكتملة</option>
+    <option value="مؤجلة">مؤجلة</option>
+  </select>
+  <input type="text" id="notes" placeholder="ملاحظات">
+  <button onclick="addCaseFromForm()">إضافة الحالة</button>
+</div>
+
+<!-- أدوات إضافية -->
+<div id="tools">
+  <input type="text" id="search" placeholder="بحث عن حالة">
+  <button onclick="exportExcel()">تصدير Excel</button>
+  <button onclick="exportPDF()">تصدير PDF</button>
+</div>
+
+<!-- قائمة الحالات -->
+<div id="cases-list"></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
